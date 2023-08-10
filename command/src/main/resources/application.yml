@@ -20,7 +20,20 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-    
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include:
+          - "*"
+  endpoint:
+    prometheus:
+      enabled: true
+    metrics:
+      enabled: true
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
 server:
   port: 8083
-

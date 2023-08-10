@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "6043d368-0ef1-48bd-965f-ee62ae2ee7aa",
+		"name": "CQRS Introduction - cbarbosagomesfilho@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "13632925"
+	},
+	"item": [
+		{
+			"name": "Command - Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"MacBook Pro 15\",\n    \"code\": \"0001\",\n    \"category\": \"Electronic Device\",\n    \"price\": 13000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8083/api/v1/command/products"
+			},
+			"response": []
+		},
+		{
+			"name": "Query - List All Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8084/api/v1/query/products"
+			},
+			"response": []
+		}
+	]
+}

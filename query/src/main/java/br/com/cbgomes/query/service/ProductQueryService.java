@@ -10,16 +10,14 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
 @AllArgsConstructor
 public class ProductQueryService {
-
     private final ProductQueryRepository repository;
-    private final ConverterDTO converter;
-
 
     public List<ProductQuery> list() {
         return this.repository.findAll();

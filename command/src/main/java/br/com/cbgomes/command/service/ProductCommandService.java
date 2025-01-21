@@ -6,6 +6,7 @@ import br.com.cbgomes.command.repository.ProductCommandRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @AllArgsConstructor
